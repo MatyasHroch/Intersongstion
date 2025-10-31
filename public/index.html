@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>Intersongstion</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 20px;
+        max-width: 820px;
+      }
+      #qr {
+        margin: 12px 0;
+      }
+      .muted {
+        opacity: 0.7;
+      }
+      button {
+        padding: 10px 14px;
+      }
+      ol {
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>🎶 Intersongstion</h2>
+    <p class="muted">Find songs you and your friend both like on Spotify.</p>
+
+    <p>
+      <button id="loginOwner">1) Přihlásit mě (Uživatel A)</button>
+      <span id="ownerState" class="muted"></span>
+    </p>
+
+    <div id="qrWrap" style="display: none">
+      <p class="muted">Dej naskenovat tenhle QR kód druhému uživateli:</p>
+      <div id="qr"></div>
+      <p class="muted" id="joinUrl"></p>
+    </div>
+
+    <p id="guestState" class="muted"></p>
+
+    <div id="result"></div>
+
+    <script src="/qrcode.min.js"></script>
+    <script src="/main.js"></script>
+    <script>
+      if ("serviceWorker" in navigator)
+        navigator.serviceWorker.register("/sw.js");
+    </script>
+  </body>
+</html>

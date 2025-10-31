@@ -1,0 +1,9 @@
+{
+  "name": "Intersongstion",
+  "short_name": "Intersongstion",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111",
+  "theme_color": "#111",
+  "icons": []
+}
